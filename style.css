@@ -1,0 +1,20 @@
+body{
+    background: url("background.jpg");
+}
+canvas{
+    animation-name: anim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border: black solid 1px;
+}
+@keyframes anim{
+    0%{
+        box-shadow: 1px 1px 50px rgb(5, 166, 172);
+    }
+    50%{
+        box-shadow: 1px 1px 50px rgb(23, 168, 4);
+    }
+    100%{
+        box-shadow: 1px 1px 50px rgb(5, 166, 172);
+    }
+}
