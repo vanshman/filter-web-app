@@ -1,5 +1,8 @@
-function preload(){
+noseX = 0;
+noseY = 0;
 
+function preload(){
+    clown_nose = loadImage("https://i.postimg.cc/bJsNVRnv/moustache.png");
 }
 function setup(){
     canvas = createCanvas(300, 300);
@@ -14,9 +17,6 @@ function setup(){
 function modelLoaded(){
     console.log("posenet initialized");
 }
-function draw(){
-    image(video, 0, 0, 300, 300);
-}
 function take_snapshot(){
     save("filter.png");
 }
@@ -24,6 +24,10 @@ function gotPoses(results){
     if(results.length > 0){
         console.log(results);
         noseX = results[0].pose.nose.x;
-        noseY = results[0].pose.nose.Y;
+        noseY = results[0].pose.nose.y;
     }
+}
+function draw(){
+    image(video, 0, 0, 300, 300);
+    image(clown_nose, noseX - 25, noseY - 3, 50, 50);
 }
